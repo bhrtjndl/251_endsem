@@ -1,0 +1,115 @@
+<!--
+	-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Question 2</title>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script>
+
+function checking(){
+	var nm,adr,em,pnum,bnum,pass;
+	nm = document.getElementById("Name").value;
+	adr = document.getElementById("address").value;
+	em = document.getElementById("mail").value;
+	pnum = document.getElementById("Number").value;
+	bnum = document.getElementById("bankacc").value;
+	pass = document.getElementById("pass").value;
+	
+	var regnm=/^[a-zA-Z][a-zA-Z\s]{0,19}$/	
+	if(!regnm.test(nm)){
+		alert("Invalid Name");
+		return false;
+	}
+	var regadr=/^.{1,100}/;
+	if(!regadr.test(adr)){
+		alert("Invalid Address");
+		return false;
+	}
+	var regem=/^[a-zA-Z]+@[a-zA-Z]+.com$/;
+	if(!regem.test(em)){
+		alert("Invalid EMAIL");
+		return false;
+	}
+	var regpnum=/^[1-9][0-9]{9}$/;
+	if(!regpnum.test(pnum)){
+		alert("Invalid Contact");
+		return false;
+	}
+	var regbnum=/^[0-9]{5}$/;
+	if(!regbnum.test(bnum)){
+		alert("Invalid Account");
+		return false;
+	}
+	var regpass=/^[a-zA-Z0-9]{1,20}$/;
+	if(!regpass.test(pass)){
+		alert("Invalid Password");
+		return false;
+	}
+	return true;
+}
+</script>
+
+<!-- css files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+<!-- //css files -->
+<!-- online-fonts -->
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'><link href='//fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>
+<style>
+button{
+	padding:10px;
+	background-color:#d52685;
+	color:white;
+	margin-bottom:10px;
+	border:none;
+}
+</style>
+</head>
+<body>
+<!--header-->
+	<div class="header-w3l">
+		<h1>CS251 IITK</h1>
+	</div>
+<!--//header-->
+<!--main-->
+<div class="main-agileits">
+	<h2 class="sub-head">REGISTER YOURSELF</h2>
+		<div class="sub-main">	
+			<form action="request.php" onsubmit="return checking()" method="post">
+				<input placeholder="Name" name="Name" class="Name" id="Name" type="text" required="">
+					<span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span><br>
+				<p id="id1"></p>
+				<input placeholder="Address" name="address" class="address" id="address" type="text" required="">
+					<span class="icon2"><i class="fa fa-home" aria-hidden="true"></i></span><br>
+
+				<input placeholder="Email" name="email" class="mail" id="mail" type="text" required="">
+					<span class="icon3"><i class="fa fa-envelope" aria-hidden="true"></i></span><br>
+
+				<input placeholder="Phone Number" name="Number" class="Number" id ="Number" type="text" required="">
+					<span class="icon4"><i class="fa fa-phone" aria-hidden="true"></i></span><br>
+
+				<input placeholder="Bank Account Number" name="bankacc" class="bankacc" id="bankacc" type="text" required="">
+					<span class="icon5"><i class="fa fa-money" aria-hidden="true"></i></span><br>
+
+				<input  placeholder="Account Password" name="Password" class="pass" id="pass" type="password" required="">
+					<span class="icon6"><i class="fa fa-unlock" aria-hidden="true"></i></span><br>
+				
+				<input type="submit" value="SUBMIT">
+			</form>
+			<button><a href="admin.php" style="color:white;">See all registrations.</a></button>
+		</div>
+		<div class="clear"></div>
+</div>
+<!--//main-->
+
+<!--footer-->
+<div class="footer-w3">
+	<p>&copy; 2018 Bharat Jindal 160192</p>
+</div>
+<!--//footer-->
+
+</body>
+</html>
